@@ -1,0 +1,214 @@
+CREATE TABLE PROJECTADMIN(
+    projectAdminID  INT AUTO_INCREMENT,
+    userName VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    age INT NOT NULL,
+    nbOfProjectCreated INT NOT NULL,
+    PRIMARY KEY(projectAdminID)
+);
+
+CREATE TABLE USERS(
+    userID INT NOT NULL,
+    userName    VARCHAR(255) NOT NULL,
+    email   VARCHAR(255) NOT NULL,
+    password  VARCHAR(255),
+    PRIMARY KEY(userID)
+);
+
+
+CREATE TABLE FTCONTRIBUTOR (
+    fTContributorID INT AUTO_INCREMENT,
+    userName VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    age INT NOT NULL,
+    nbrOfContributions INT DEFAULT 0,
+    nbrOfSkills INT DEFAULT 0,
+    PRIMARY KEY(fTContributorID),
+);
+
+CREATE TABLE PTCONTRIBUTOR (
+    pTContributorID INT AUTO_INCREMENT,
+    userName VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    age INT NOT NULL,
+    nbrOfContributions INT DEFAULT 0,
+    nbrOfSkills INT DEFAULT 0,
+    PRIMARY KEY(pTContributorID),
+);
+
+CREATE TABLE UPCONTRIBUTOR (
+    uPContributorID INT AUTO_INCREMENT,
+    userName VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    age INT NOT NULL,
+    nbrOfContributions INT DEFAULT 0,
+    nbrOfSkills INT DEFAULT 0,
+    PRIMARY KEY(uPContributorID),
+);
+
+CREATE TABLE PROJECT (
+    projectID INT AUTO_INCREMENT,
+    title VARCHAR(255) NOT NULL,
+    createdBy VARCHAR(255),
+    description TEXT,
+    duration INT NOT NULL,
+    nbrOfContributors INT DEFAULT 0,
+    status VARCHAR(20) CHECK (VALUE IN("completed", "active")) NOT NULL,
+    PRIMARY KEY(projectID),
+);
+
+CREATE TABLE TASK (
+    taskID INT AUTO_INCREMENT,
+    title VARCHAR(255) NOT NULL,
+    pointsAssigned INT NOT NULL,
+    description TEXT,
+    duration INT NOT NULL,
+    PRIMARY KEY(taskID),
+    FOREIGN KEY (projectID) REFERENCES PROJECT(projectID) ON DELETE CASCADE
+);
+
+
+CREATE TABLE SKILL (
+    skillID INT AUTO_INCREMENT,
+    skillName VARCHAR(255) NOT NULL,
+    category VARCHAR(255),
+    PRIMARY KEY(skillID)
+);
+
+CREATE TABLE BADGE (
+    badgeID INT AUTO_INCREMENT,
+    badgeName VARCHAR(255) NOT NULL,
+    pointsRequired INT NOT NULL,
+    PRIMARY KEY(badgeID)
+);
+
+
+CREATE TABLE TASK_FTCONT (
+    taskID INT NOT NULL,
+    fTContributorID INT NOT NULL,
+    PRIMARY KEY (taskID, fTContributorID),
+    FOREIGN KEY (taskID) REFERENCES TASK(taskID) ON DELETE CASCADE,
+    FOREIGN KEY (fTContributorID) REFERENCES FTCONTRIBUTOR(fTContributorID) ON DELETE CASCADE
+);
+
+CREATE TABLE TASK_PTCONT (
+    taskID INT NOT NULL,
+    pTContributorID INT NOT NULL,
+    PRIMARY KEY (taskID, pTContributorID),
+    FOREIGN KEY (taskID) REFERENCES TASK(taskID) ON DELETE CASCADE,
+    FOREIGN KEY (pTContributorID) REFERENCES PTCONTRIBUTOR(pTContributorID) ON DELETE CASCADE
+);
+
+CREATE TABLE TASK_UPCONT (
+    taskID INT NOT NULL,
+    uPContributorID INT NOT NULL,
+    PRIMARY KEY (taskID, uPContributorID),
+    FOREIGN KEY (taskID) REFERENCES TASK(taskID) ON DELETE CASCADE,
+    FOREIGN KEY (uPContributorID) REFERENCES UPCONTRIBUTOR(uPContributorID) ON DELETE CASCADE
+);
+
+
+CREATE TABLE HIRES_FT (
+    projectID INT NOT NULL,
+    fTContributorID INT NOT NULL,
+    PRIMARY KEY (projectID, fTContributorID),
+    FOREIGN KEY (projectID) REFERENCES PROJECT(projectID) ON DELETE CASCADE,
+    FOREIGN KEY (fTContributorID) REFERENCES FTCONTRIBUTOR(fTContributorID) ON DELETE CASCADE
+);
+
+
+CREATE TABLE HIRES_PT (
+    projectID INT NOT NULL,
+    pTContributorID INT NOT NULL,
+    PRIMARY KEY (projectID, pTContributorID),
+    FOREIGN KEY (projectID) REFERENCES PROJECT(projectID) ON DELETE CASCADE,
+    FOREIGN KEY (pTContributorID) REFERENCES PTCONTRIBUTOR(pTContributorID) ON DELETE CASCADE
+);
+
+
+
+
+CREATE TABLE PT_CONT(
+    skillID INT NOT NULL,
+    pTContributorID INT NOT NULL,
+    FOREIGN KEY(projectID) REFERENCES PROJECT(projectID),
+    FOREIGN KEY(pTContributorID) REFERENCES PTCONTRIBUTOR(pTContributorID),
+);
+
+CREATE TABLE FT_SKILLEDAT (
+    skillID INT NOT NULL,
+    fTContributorID INT NOT NULL,
+    PRIMARY KEY (skillID, fTContributorID),
+    FOREIGN KEY (skillID) REFERENCES SKILL(skillID) ON DELETE CASCADE,
+    FOREIGN KEY (fTContributorID) REFERENCES FTCONTRIBUTOR(fTContributorID) ON DELETE CASCADE
+);
+
+
+CREATE TABLE UP_SKILLEDAT (
+    skillID INT NOT NULL,
+    uPContributorID INT NOT NULL,
+    PRIMARY KEY (skillID, uPContributorID),
+    FOREIGN KEY (skillID) REFERENCES SKILL(skillID) ON DELETE CASCADE,
+    FOREIGN KEY (uPContributorID) REFERENCES UPCONTRIBUTOR(uPContributorID) ON DELETE CASCADE
+);
+
+
+CREATE TABLE PT_SKILLEDAT (
+    skillID INT NOT NULL,
+    pTContributorID INT NOT NULL,
+    PRIMARY KEY (skillID, pTContributorID),
+    FOREIGN KEY (skillID) REFERENCES SKILL(skillID) ON DELETE CASCADE,
+    FOREIGN KEY (pTContributorID) REFERENCES PTCONTRIBUTOR(pTContributorID) ON DELETE CASCADE
+);
+
+
+
+
+
+CREATE TABLE FT_REWARD (
+    badgeID INT NOT NULL,
+    fTContributorID INT NOT NULL,
+    PRIMARY KEY (badgeID, fTContributorID),
+    FOREIGN KEY (badgeID) REFERENCES BADGE(badgeID) ON DELETE CASCADE,
+    FOREIGN KEY (fTContributorID) REFERENCES FTCONTRIBUTOR(fTContributorID) ON DELETE CASCADE
+);
+
+CREATE TABLE UP_REWARD (
+    badgeID INT NOT NULL,
+    uPContributorID INT NOT NULL,
+    PRIMARY KEY (badgeID, uPContributorID),
+    FOREIGN KEY (badgeID) REFERENCES BADGE(badgeID) ON DELETE CASCADE,
+    FOREIGN KEY (uPContributorID) REFERENCES UPCONTRIBUTOR(upContributorID) ON DELETE CASCADE
+);
+
+CREATE TABLE PT_REWARD (
+    badgeID INT NOT NULL,
+    pTContributorID INT NOT NULL,
+    PRIMARY KEY (badgeID, pTContributorID),
+    FOREIGN KEY (badgeID) REFERENCES BADGE(badgeID) ON DELETE CASCADE,
+    FOREIGN KEY (pTContributorID) REFERENCES PTCONTRIBUTOR(pTContributorID) ON DELETE CASCADE
+);
+
+CREATE TABLE REQUIRES (
+    taskID INT NOT NULL,
+    skillID INT NOT NULL,
+    PRIMARY KEY (taskID, skillID),
+    FOREIGN KEY (taskID) REFERENCES tasks(TaskID) ON DELETE CASCADE,
+    FOREIGN KEY (skillID) REFERENCES skill(SkillID) ON DELETE CASCADE
+);
+
+
+
+
+
+
+
+
+
+
+
+

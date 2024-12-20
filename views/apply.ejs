@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create a Project</title>
+  <link rel="stylesheet" href="/project_form.css">
+  <link rel="stylesheet" href="shared.css" />
+  <link rel="stylesheet" href="projects.css" /> 
+</head>
+
+<body>
+
+    <header>
+        <div id="page-logo">
+            <a href="/home_logged_in">Who's In</a>
+          </div>
+          <nav>
+            <ul>
+              <li><a href="/about">About</a></li>
+              <li> <a href="/logout" >Log Out</a></li>
+            </ul>
+          </nav>
+    </header>
+    <h1>APPLY</h1>
+
+
+  <form action="/submit-project" method="POST">
+
+   
+    <div class="form-group">
+      <label for="title">Project Title</label>
+      <input type="text" id="title" name="title" required>
+    </div>
+
+    <div class="form-group">
+      <label for="createdBy">Full Name</label>
+      <input type="text" id="createdBy" name="createdBy" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="skills">Skills</label>
+      <input type="text" id="skills" name="skills" required>
+    </div>
+
+    <div class="form-group">
+        <label for="nbOfContributors">Number of Tasks willing to work on</label>
+        <input type="number" id="contributors" name="contributors" min="1" required>
+      </div>
+      
+
+    <label for="status">Contribution:</label>
+        <select id="status" name="status" required>
+            <option value="Part-Time">Part-Time</option>
+            <option value="Full-Time">Full-Time</option>
+            <option value="Unpaid">UnPaid</option>
+        </select><br><br>
+
+    <div class="actions">
+        <button type="submit">Submit Application</button>
+    </div>
+    
+  </form>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Who's In</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Oleo+Script:wght@700&family=Quicksand:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/shared_logged_in.css" />
+    <link rel="stylesheet" href="/styles.css" />
+    
+  </head>
+  <body>
+
+    
+      
+    <header>
+      <div id="page-logo">
+        <a href="/">Who's In</a>
+      </div >
+      <div class="customized_user">
+        <h2 >WELCOME <%= username %></h2>
+      </div>
+     
+      <nav>
+        
+
+        <ul>   
+          <li>
+            <a href="/project_form">Create Project</a>
+          </li>
+          <li><a href="/projects_loggedin">Find Projects</a></li>
+          <li><a href="/about_logged_in">About</a></li>
+          <li><a href="/logout">Log Out</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="hero">
+        <div id="hero-content">
+          <h1>Who's In</h1>
+          <p>Finding the project that best suits your skills</p>
+          <a href="/projects_loggedin">Find Projects</a>
+        </div>
+      </section>
+      <section id="highlights">
+        <h2>Top Skills For This Month</h2>
+        <ul id="destinations">
+          <li class="destination">
+            <img
+              src="/images/DataV.jpg"
+              alt="Data Visualization"
+            />
+            <p>Data Visualization <strong>Lebanon</strong></p>
+          </li>
+
+          <li class="destination">
+            <img
+              src="/images/ML.webp"
+              alt="Machine Learning"
+            />
+            <p>Machine Learning <strong>Lebanon</strong></p>
+          </li>
+
+          <li class="destination">
+            <img src="/images/SM.jpg" alt="Social Media" />
+            <p>Social Media Marketing <strong>Lebanon</strong></p>
+          </li>
+        </ul>
+      </section>
+    </main>
+    <footer>
+      <ul>
+        <li>
+          <a href="https://www.instagram.com">
+            <img src="/images/instalogo.webp" alt="Instagram logo" />
+          </a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com">
+            <img src="/images/facebooklogo.webp" alt="Facebook logo" />
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com">
+            <img src="/images/LINKEDIN.png"alt="Facebook logo" />
+          </a>
+        </li>
+      </ul>
+    </footer>
+  </body>
+</html>
+

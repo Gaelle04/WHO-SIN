@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create a Project</title>
+  <link rel="stylesheet" href="/project_form.css">
+  <link rel="stylesheet" href="shared.css" />
+  <link rel="stylesheet" href="projects.css" /> 
+</head>
+
+<body>
+
+    <header>
+        <div id="page-logo">
+            <a href="/home_logged_in">Who's In</a>
+          </div>
+          <nav>
+            <ul>
+              <li><a href="/about">About</a></li>
+              <li> <a href="/logout" >Log Out</a></li>
+            </ul>
+          </nav>
+    </header>
+    <h1>PROJECT DESCRIPTION</h1>
+
+
+  <form action="/submit-project" method="POST">
+
+   
+    <div class="form-group">
+      <label for="title">Project Title</label>
+      <input type="text" id="title" name="title" required>
+    </div>
+
+    <div class="form-group">
+      <label for="createdBy">Creator</label>
+      <input type="text" id="createdBy" name="createdBy" required>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Project Description</label>
+      <textarea id="description" name="description" rows="4" required></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="skills">Skills Required</label>
+      <input type="text" id="skills" name="skills" required>
+    </div>
+
+    <div class="form-group">
+      <label for="duration">Duration (in weeks)</label>
+      <input type="number" id="duration" name="duration" min="1" required>
+    </div>
+
+    <div class="form-group">
+      <label for="nbOfContributors">Number of Contributors Required</label>
+      <input type="number" id="contributors" name="contributors" min="1" required>
+    </div>
+
+    <label for="status">Status:</label>
+        <select id="status" name="status" required>
+            <option value="Active">Active</option>
+            <option value="Completed">Completed</option>
+        </select><br><br>
+
+    <div class="actions">
+        <button type="submit">Create Project</button>
+    </div>
+    
+  </form>
+
+</body>
+</html>

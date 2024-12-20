@@ -1,0 +1,155 @@
+/* styles.css */
+
+
+
+body{
+    
+    background: linear-gradient(80deg, rgb(77, 77, 77), rgb(68, 68, 68));
+    color: rgb(68, 68, 68);
+    
+    align-items: center;
+   
+    
+}
+
+#page-logo a {
+    font-style: italic;
+    font-family: "Roboto", sans-serif;
+    color: rgb(245, 243, 160);
+    font-size: 42px;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px rgb(0, 0, 0);
+    
+  }
+  
+#page-logo a {
+    color: rgb(183, 230, 235);
+  }
+  
+  header {
+    position: static;
+    margin-left: 20px;
+    padding-top: 20px;
+  }
+  
+  header a {
+    color: rgb(183, 230, 235);
+  }
+  
+  header nav a:hover {
+    background-color: rgb(183, 230, 235);
+    color: rgb(59, 59, 59);
+  }
+
+  h1 {
+    position: relative;
+    top: 10px;
+    font-family: "Quicksand", sans-serif;
+    font-weight: bold;
+    font-size: 50px;
+    color: whitesmoke;
+    margin-bottom: 30px;
+    text-align: center;
+    margin-left: 60px;
+  }
+  
+  form {
+    position: relative;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 900px;
+    margin-left: 500px;
+   
+    
+
+  }
+  
+  .form-group {
+    margin-bottom: 40px;
+    
+    
+
+  }
+  
+
+  
+  
+  .actions{
+    text-decoration: none;
+    padding: 6px;
+    color: rgb(22, 211, 228);
+    border-radius: 5px;
+  }
+  
+  .actions a:hover {
+    background-color: rgb(235, 253, 255);
+  }
+
+
+  label {
+    font-family: "Quicksand", sans-serif;
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 8px;
+    display: block;
+  }
+  
+  input[type="number"], textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+    color: #333;
+    box-sizing: border-box;
+  }
+  
+
+  input#title, input#createdBy, input#skills {
+    
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+    color: #333;
+    box-sizing: border-box;
+
+  }
+  
+  textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  button {
+    
+    text-decoration: none;
+    padding: 6px;
+    color: rgb(22, 211, 228);
+    border-radius: 5px;
+    padding: 12px;
+    border: none;
+    fill: none;
+    border-radius: 6px;
+    font-size: 1.1em;
+    width: 100%;
+    cursor: pointer;
+    background-color: #fff;
+    
+    
+  }
+  button:hover{
+    background-color: rgb(235, 253, 255);
+  }
+  
+  input[type="number"]:focus, textarea:focus {
+    border-color: #007BFF;
+    outline: none;
+  }
+  
+ 

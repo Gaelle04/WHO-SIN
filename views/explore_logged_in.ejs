@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Project</title>
+    <link rel="stylesheet" href="/explore.css">
+</head>
+
+
+<body>
+       
+        <div class="content">
+          <h1>ABOUT THIS PROJECT</h1>
+          <p>This project seeks talented programmers that are dedicated to make a difference in the world of programming and contribute to our mission</p>
+          <h2>Skills Required</h2>
+          
+              <% skill.forEach(skill => { %>
+                  <li><%= skill.skillName %></li>
+              <% }); %>
+          <br> <br> 
+  
+          <a href="/apply">Apply</a>
+          
+        </div>
+
+</body>
+</html>

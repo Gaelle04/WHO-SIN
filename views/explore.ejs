@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Project</title>
+    <link rel="stylesheet" href="/explore.css">
+  
+</head>
+
+
+<body>
+  <header>
+    <div id="page-logo">
+        <a href="/">Who's In</a>
+      </div>
+</header>
+       
+        <div class="content">
+
+          <h1>ABOUT THIS PROJECT</h1>
+          <p>This project seeks talented programmers that are dedicated <br>
+            to make a difference in the world of programming and contribute to our mission</p>
+            
+              <img src="/images/explore.png" alt="An example image" class="image" width="1000" height="700">
+           
+            
+          <h2>Skills Required</h2>
+          
+              <% skill.forEach(skill => { %>
+                  <li><%= skill.skillName %></li>
+              <% }); %>
+          <br> <br> 
+
+          <h2>Number of Contributors: 2</h2>
+
+          <br> <br>
+  
+          <a href="/apply">Apply</a>
+
+          
+        </div>
+
+</body>
+</html>

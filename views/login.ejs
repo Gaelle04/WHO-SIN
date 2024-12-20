@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+
+    <title>Login</title>
+    
+    <link rel="stylesheet" href="/main.css" />
+</head>
+<header>
+  <div id="page-logo">
+    <a href="/">Who's In</a>
+  </div>
+</header>
+<body>
+
+    <div class="form-container">
+        <h2>Login</h2>
+        <form action="/login" method="post">
+        
+          <div class="form-group">
+            <label for="name">Username</label>
+            <input type="text" id="name" name="username" placeholder="Enter your username" required autocomplete="off">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" placeholder="Enter your email" required autocomplete="off">
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+          </div>
+          <button type="submit" class="submit-btn">Login</button>
+        </form>
+        
+        <p>Don't have an account? <a class="link" href="/signup">SignUp</a></p>
+      </div>
+      
+      <footer>
+        <ul>
+          <li>
+            <a href="https://www.instagram.com">
+              <img src="/images/instalogo.webp" alt="Instagram logo" />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com">
+              <img src="/images/facebooklogo.webp" alt="Facebook logo" />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com">
+              <img src="/images/LINKEDIN.png"alt="Facebook logo" />
+            </a>
+          </li>
+        </ul>
+      </footer>
+     
+    
+</body>
+</html>
